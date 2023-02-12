@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3001;
 //Middlewares
 app.use(cookieParser());
 app.use(cors({
-    origin:'http://localhost:3000', 
+    origin:'https://reliable-conkies-8da68e.netlify.app', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }));
