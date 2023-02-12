@@ -9,7 +9,7 @@ const router = express.Router();
 
 //test route
 router.get("/", (req, res) => {
-    res.send("Hello world!.");
+    res.send("Hello world!. & Backend");
 })
 
 //Register route
