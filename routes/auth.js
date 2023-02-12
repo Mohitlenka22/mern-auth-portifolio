@@ -63,7 +63,7 @@ router.post("/login", async (req, res) => {
         if (!loginUser) {
             res.status(500).json({ msg: "Invalid Credentials" });
         }
-        res.status(200).json({ msg: "Succesfully Logged in." });
+        res.status(200).json({ msg: "Succesfully Logged in.", token: token });
     }
     catch (err) {
         res.status(500).json({ error: err.message });
@@ -76,7 +76,7 @@ router.get("/getdata", authenticate, (req, res, next) => {
     if (!req.user) {
         res.status(500).send("Error.")
     }
-    res.send(req.user);
+    res.status(200).send(req.user);
     next();
 });
 
