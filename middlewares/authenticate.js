@@ -1,7 +1,6 @@
 import jwt from "jsonwebtoken";
 import dotenv from 'dotenv';
 import User from "../models/userSchema.js";
-import Cookies from 'js-cookie'
 
 dotenv.config({ path: './config.env' });
 
