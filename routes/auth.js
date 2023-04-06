@@ -57,6 +57,7 @@ router.post("/login", async (req, res) => {
         const loginUser = await bcrypt.compare(password, user.password);
         let token = await user.generateAuthToken();
         res.cookie("connect", token, {
+            domain: 'https://backendjs-pf2r.onrender.com',
             httpOnly: true,
             maxAge: new Date(Date.now() + 900000),
             secure: true,
