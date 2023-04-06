@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cookieParser());
 app.use(cors({
     // https://mohitlenka.netlify.app
-    origin: 'https://mohitlenka.netlify.app/',
+    origin: 'https://mohitlenka.netlify.app',
     credentials: true
 }));
 app.use(express.json());
