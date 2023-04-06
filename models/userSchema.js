@@ -34,9 +34,9 @@ userSchema.methods.generateAuthToken = async function () {
 };
 
 userSchema.methods.generateResetToken = async function () {
-    const resetToken = crypto.randomBytes(20).toString("hex");
-    this.resetpasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex");
-    this.resetpasswordExpire = Date.now() + 10 * (60 * 1000);
+    const resetToken = await crypto.randomBytes(20).toString("hex");
+    this.resetpasswordToken = await crypto.createHash("sha256").update(resetToken).digest("hex");
+    this.resetpasswordExpire = await Date.now() + 10 * (60 * 1000);
     await this.save();
     return resetToken;
 };
