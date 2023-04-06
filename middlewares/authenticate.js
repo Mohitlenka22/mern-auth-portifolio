@@ -6,7 +6,7 @@ dotenv.config({ path: './config.env' });
 
 const authenticate = async (req, res, next) => {
     try {
-        const token = await req.cookies.connect;
+        const token = req.cookies.connect;
         console.log(token);
         const user = jwt.verify(token, process.env.JWT_SECRET);
         const loginUser = await User.findOne({ _id: user._id });
