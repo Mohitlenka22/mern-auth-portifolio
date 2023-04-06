@@ -17,12 +17,12 @@ const PORT = process.env.PORT || 3001;
 app.use(cookieParser());
 app.use(cors({
     // https://mohitlenka.netlify.app
-    origin:'*', 
+    origin:'https://mohitlenka.netlify.app', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }))
+// app.use(express.urlencoded({ extended: false }))
 
 //Mongodb connection
 
