@@ -56,10 +56,12 @@ router.post("/login", async (req, res) => {
         }
         const loginUser = await bcrypt.compare(password, user.password);
         let token = await user.generateAuthToken();
-        // res.cookie("connect", token, {
-        //     httpOnly: true,
-        //     maxAge: new Date(Date.now() + 900000)
-        // });
+        res.cookie("connect", token, {
+            httpOnly: true,
+            maxAge: new Date(Date.now() + 900000),
+            secure: true,
+            sameSite: 'none'
+        });
         if (!loginUser) {
             res.status(500).json({ msg: "Invalid Credentials" });
         }
