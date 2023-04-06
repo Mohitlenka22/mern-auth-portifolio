@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3001;
 //Middlewares
 app.use(cookieParser());
 app.use(cors({
-    origin:'https://mohitlenka.netlify.app/', 
+    origin:'https://mohitlenka.netlify.app', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }));
