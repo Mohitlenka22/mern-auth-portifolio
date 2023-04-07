@@ -57,8 +57,8 @@ router.post("/login", async (req, res) => {
         const loginUser = await bcrypt.compare(password, user.password);
         let token = await user.generateAuthToken();
         res.cookie("connect", token, {
-            domain: 'localhost',
-            port: 3001,
+            domain: 'https://mohitlenka.netlify.app',
+            // port: 3001,
             path: '/',
             httpOnly: true,
             maxAge: new Date(Date.now() + 900000),
@@ -99,7 +99,7 @@ router.post("/forgot", async (req, res) => {
         }
         const resetToken = await user.generateResetToken();
 
-        const resetUrl = `http://localhost:3000/${resetToken}`;
+        const resetUrl = `http://mohitlenka.netlify.app/${resetToken}`;
 
         const message =
             `
@@ -179,12 +179,12 @@ router.put('/passwordreset/:resetToken', async (req, res) => {
 
 router.get("/logout", async (req, res) => {
     res.clearCookie("connect", {
-        domain: 'localhost',
-        port: 3001,
+        domain: 'https://mohitlenka.netlify.app',
+        // port: 3001,
         path: '/',
         secure: true,
         sameSite: 'none'
-      });      
+    });
     res.status(200).send("Successfully logged Out.");
 });
 
