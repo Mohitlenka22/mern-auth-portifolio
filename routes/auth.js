@@ -57,7 +57,7 @@ router.post("/login", async (req, res) => {
         const loginUser = await bcrypt.compare(password, user.password);
         let token = await user.generateAuthToken();
         res.cookie("connect", token, {
-            domain: '.mohitlenka.netlify.app',
+            domain: '.backendjs-pf2r.onrender.com',
             path: '/',
             httpOnly: true,
             maxAge: new Date(Date.now() + 900000),
@@ -98,7 +98,7 @@ router.post("/forgot", async (req, res) => {
         }
         const resetToken = await user.generateResetToken();
 
-        const resetUrl = `http://mohitlenka.netlify.app/${resetToken}`;
+        const resetUrl = `https://mohitlenka.netlify.app/${resetToken}`;
 
         const message =
             `
@@ -178,7 +178,7 @@ router.put('/passwordreset/:resetToken', async (req, res) => {
 
 router.get("/logout", async (req, res) => {
     res.clearCookie("connect", {
-        domain: '.mohitlenka.netlify.app',
+        domain: '.backendjs-pf2r.onrender.com',
         path: '/',
         secure: true,
         sameSite: 'none'
