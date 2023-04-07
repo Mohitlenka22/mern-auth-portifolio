@@ -102,31 +102,34 @@ router.post("/forgot", async (req, res) => {
 
         const message =
             `
-        <body
-        style="background-image: url(https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80); margin-top: 0px;">
-        <center>
-            <h2
-                style="background-color: rgb(128, 27, 125); color: #fff; font-family: Arial, Helvetica, sans-serif; padding: 20px 10px;">
-                bheads257
-            </h2>
-        </center>
-        <h3
-            style="color: red; text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-            Your request to reset password
-        </h3>
-        <p
-            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;">
-            Link to change password is below:
-        </p>
-        <a href="${resetUrl}" clicktracking="off"
-            style="display: block; text-align: center; margin: 20px 0; font-size: 1.2rem; font-weight: bold; color: rgb(128, 27, 125); text-decoration: none; border: 2px solid rgb(128, 27, 125); padding: 10px 20px;">
-            ${resetUrl}
-        </a>
-        <footer
-            style="background-color: black; color: #fff; opacity: 0.9; height: 3rem; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-            &copy; All Rights Reserved - 2022
-        </footer>
-    </body>
+            <body style="background-color: black;opacity: 0.9;margin-top: 0px;display: flex; flex-direction: column">
+            <center>
+                <h2
+                    style="background-color: rgb(8, 134, 31); color: #fff; font-family: Arial, Helvetica, sans-serif; padding: 20px 10px;">
+                    mohitlenka.netlify.app
+                </h2>
+            </center>
+            <h3
+                style="color: #fff;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                Here's the request for password reset, link expires in 10 minutes.
+            </h3>
+            <p
+                style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;">
+                Link to change password is below:
+            </p>
+            <a href="${resetUrl}" clicktracking="off"
+                style="display: block; text-align: center; margin: 20px 0; font-size: 1.2rem; font-weight: bold; color: rgb(128, 27, 125); text-decoration: none; border: 2px solid rgb(128, 27, 125); padding: 10px 20px;">
+                ${resetUrl}
+            </a>
+            <footer
+                style="background-color: rgb(52, 51, 51); opacity: 0.9;
+                    color: #fff; opacity: 0.9; height: 3rem; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;position: relative; top: 15rem">
+                &copy; All Rights Reserved - 2023
+                <br />
+                <a href="https://mohitlenka.netlify.app/" target="_blank" style="color: blue">mohitlenka.netlify.app</a> 
+            </footer>
+        </body>
+        
 
         `
         try {
