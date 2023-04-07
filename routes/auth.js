@@ -58,7 +58,7 @@ router.post("/login", async (req, res) => {
         let token = await user.generateAuthToken();
         res.cookie("connect", token, {
             domain: 'mohitlenka.netlify.app',
-            // port: 3001,
+            port: 10000,
             path: '/',
             httpOnly: true,
             maxAge: new Date(Date.now() + 900000),
@@ -180,7 +180,7 @@ router.put('/passwordreset/:resetToken', async (req, res) => {
 router.get("/logout", async (req, res) => {
     res.clearCookie("connect", {
         domain: 'mohitlenka.netlify.app',
-        // port: 3001,
+        port: 10000,
         path: '/',
         secure: true,
         sameSite: 'none'
