@@ -58,7 +58,6 @@ router.post("/login", async (req, res) => {
         let token = await user.generateAuthToken();
         res.cookie("connect", token, {
             domain: 'mohitlenka.netlify.app',
-            port: 10000,
             path: '/',
             httpOnly: true,
             maxAge: new Date(Date.now() + 900000),
