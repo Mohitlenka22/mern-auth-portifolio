@@ -57,16 +57,19 @@ router.post("/login", async (req, res) => {
         const loginUser = await bcrypt.compare(password, user.password);
         let token = await user.generateAuthToken();
         res.cookie("connect", token, {
-            domain: 'https://backendjs-pf2r.onrender.com',
+            domain: 'localhost',
+            port: 3001,
+            path: '/',
             httpOnly: true,
             maxAge: new Date(Date.now() + 900000),
             secure: true,
             sameSite: 'none'
         });
+        res.set('Access-Control-Allow-Credentials', 'true');
         if (!loginUser) {
             res.status(500).json({ msg: "Invalid Credentials" });
         }
-        res.status(200).json({ msg: "Succesfully Logged in.", token: token });
+        res.status(200).json({ msg: "Succesfully Logged in." });
     }
     catch (err) {
         res.status(500).json({ error: err.message });
@@ -175,7 +178,13 @@ router.put('/passwordreset/:resetToken', async (req, res) => {
 //logout route
 
 router.get("/logout", async (req, res) => {
-    res.clearCookie('connect');
+    res.clearCookie("connect", {
+        domain: 'localhost',
+        port: 3001,
+        path: '/',
+        secure: true,
+        sameSite: 'none'
+      });      
     res.status(200).send("Successfully logged Out.");
 });
 

@@ -14,14 +14,14 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 //Middlewares
+
 app.use(cookieParser());
+app.use(express.json());
 app.use(cors({
-    // https://mohitlenka.netlify.app
-    // origin: 'https://mohitlenka.netlify.app',
-    origin: 'http://localhost:3000',
+    origin: 'https://mohitlenka.netlify.app',
+    // origin: 'http://localhost:3000',
     credentials: true
 }));
-app.use(express.json());
 
 //Mongodb connection
 
