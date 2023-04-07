@@ -57,7 +57,7 @@ router.post("/login", async (req, res) => {
         const loginUser = await bcrypt.compare(password, user.password);
         let token = await user.generateAuthToken();
         res.cookie("connect", token, {
-            domain: 'mohitlenka.netlify.app',
+            domain: '.mohitlenka.netlify.app',
             path: '/',
             httpOnly: true,
             maxAge: new Date(Date.now() + 900000),
@@ -178,8 +178,7 @@ router.put('/passwordreset/:resetToken', async (req, res) => {
 
 router.get("/logout", async (req, res) => {
     res.clearCookie("connect", {
-        domain: 'mohitlenka.netlify.app',
-        port: 10000,
+        domain: '.mohitlenka.netlify.app',
         path: '/',
         secure: true,
         sameSite: 'none'
