@@ -1,0 +1,43 @@
+.footer {
+  display: flex;
+  background-color: black;
+  height: 7vh;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+  color: #fff;
+  font-size: 500;
+}
+h3 {
+  position: relative;
+  top: 3rem;
+}
+
+#foot {
+  text-decoration: none;
+  color: #fff;
+  padding-left: 5rem;
+  position: relative;
+  left: 45rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 0rem;
+    margin: -1rem;
+  }
+  h3 {
+    position: relative;
+    top: -8rem;
+    padding: 20px;
+  }
+  #foot {
+    position: relative;
+    left: 1rem;
+    bottom: 7rem;
+    color: #fff;
+    padding: 5px;
+  }
+}

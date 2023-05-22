@@ -1,0 +1,50 @@
+.Content_Container {
+  display: flex;
+  flex-flow: row wrap;
+  /* padding: 50px; */
+}
+
+.Content_left > p {
+  width: 80%;
+}
+
+.Content_left {
+  flex: 0.6;
+}
+
+.Content_right {
+  flex: 0.4;
+}
+
+.Content_right > img {
+  height: 500px;
+  width: 500px;
+}
+
+@media only screen and (max-width: 600px) {
+  .Content_left,
+  .Content_right {
+    flex: 1;
+  }
+  .Content_left > p {
+    position: relative;
+    top: 1rem;
+    left: 5px;
+    font-size: 25px;
+    width: 14em;
+  }
+
+  .Content_left > h1 {
+    display: inline-block;
+    font-size: 30px;
+    position: relative;
+    top: 1rem;
+  }
+
+  .Content_right > img {
+    position: relative;
+    bottom: 10em;
+    height: 50rem;
+    width:20rem;
+  }
+}

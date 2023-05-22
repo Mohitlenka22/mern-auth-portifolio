@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle&family=Montserrat:ital,wght@0,500;1,500&family=Poppins:ital,wght@1,300;1,500&family=Tilt+Neon&display=swap");
+
+body {
+  overflow-x: hidden;
+  font-family: "Dongle", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Tilt Neon", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html ::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  display: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
