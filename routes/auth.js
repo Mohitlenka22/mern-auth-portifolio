@@ -9,7 +9,7 @@ const router = express.Router();
 
 //test route
 router.get("/", (req, res) => {
-    res.send("Hello world!. & Backend");
+    res.send("Welcome To the Backend!");
 })
 
 //Register route
@@ -57,7 +57,8 @@ router.post("/login", async (req, res) => {
         const loginUser = await bcrypt.compare(password, user.password);
         let token = await user.generateAuthToken();
         res.cookie("connect", token, {
-            domain: '.backendjs-pf2r.onrender.com',
+            // domain: '.backendjs-pf2r.onrender.com',
+            domain: 'localhost',
             path: '/',
             httpOnly: true,
             maxAge: new Date(Date.now() + 900000),
@@ -66,7 +67,7 @@ router.post("/login", async (req, res) => {
         });
         res.set('Access-Control-Allow-Credentials', 'true');
         if (!loginUser) {
-            res.status(500).json({ msg: "Invalid Credentials" });
+            res.status(401).json({ msg: "Invalid Credentials" });
         }
         res.status(200).json({ msg: "Succesfully Logged in." });
     }
@@ -76,7 +77,6 @@ router.post("/login", async (req, res) => {
 });
 
 //GetData route
-
 router.get("/getdata", authenticate, (req, res, next) => {
     if (!req.user) {
         res.status(500).send("Error.")
@@ -86,7 +86,6 @@ router.get("/getdata", authenticate, (req, res, next) => {
 });
 
 //forgotpassword
-
 router.post("/forgot", async (req, res) => {
 
     const { email } = req.body;
@@ -178,10 +177,10 @@ router.put('/passwordreset/:resetToken', async (req, res) => {
 });
 
 //logout route
-
 router.get("/logout", async (req, res) => {
     res.clearCookie("connect", {
-        domain: '.backendjs-pf2r.onrender.com',
+        // domain: '.backendjs-pf2r.onrender.com',
+        domain: 'localhost',
         path: '/',
         secure: true,
         sameSite: 'none'
